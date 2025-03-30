@@ -10,5 +10,5 @@ package ch.bfh.ti.p2k.exercises.terms
  * @property value of the constant
  */
 class Constant(val value: Double) : Term() {
-	// ADD YOU CODE HERE
+    override fun eval(context: Context): Double = value
 }

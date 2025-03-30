@@ -10,6 +10,10 @@ import ch.bfh.ti.p2k.exercises.terms.UnaryOperator.*
  * @property term is the sub-term of the unary expression
  */
 class UnaryExpression(val operator: UnaryOperator, val term: Term) : Term() {
-	// ADD YOUR CODE HERE
+    override fun eval(context: Context): Double {
+        return when (operator) {
+            UnaryOperator.MINUS -> -term.eval(context)
+        }
+    }
 }
 

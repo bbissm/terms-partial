@@ -12,6 +12,11 @@ package ch.bfh.ti.p2k.exercises.terms
  * @throws CanNotBeBlankException whenever the variable name is empty or blank
  */
 class Variable(val name: String) : Term () {
+    init {
+        if (name.isBlank()) throw CanNotBeBlankException("var name cannot be blank or empty.")
+    }
 
-	// ADD YOUR CODE HERE
+    override fun eval(context: Context): Double {
+        return context.getValue(name)
+    }
 }

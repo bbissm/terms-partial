@@ -11,5 +11,12 @@ import ch.bfh.ti.p2k.exercises.terms.BinaryOperator.*
  * @property right term
  */
 class BinaryExpression(val operator: BinaryOperator, val left: Term, val right: Term) : Term() {
-	// ADD YOU CODE HERE
+    override fun eval(context: Context): Double {
+        return when (operator) {
+            BinaryOperator.ADD -> left.eval(context) + right.eval(context)
+            BinaryOperator.SUB -> left.eval(context) - right.eval(context)
+            BinaryOperator.MUL -> left.eval(context) * right.eval(context)
+            BinaryOperator.DIV -> left.eval(context) / right.eval(context)
+        }
+    }
 }
